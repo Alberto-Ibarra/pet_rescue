@@ -10,6 +10,7 @@ const albertURI = process.env.MONGODB;
 const makaURI = process.env.MONGODB1
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 app.use('/pets', petController);
 
 
