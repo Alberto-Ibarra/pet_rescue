@@ -7,13 +7,13 @@ const petController = require('./controllers/pet.js')
 require('dotenv').config()
 
 const albertURI = process.env.MONGODB;
-
+const makaURI = process.env.MONGODB1
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use('/pets', petController);
 
 
-mongoose.connect(albertURI, ()=>{
+mongoose.connect(makaURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 
