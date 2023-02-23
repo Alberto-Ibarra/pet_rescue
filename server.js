@@ -13,7 +13,7 @@ app.use(methodOverride('_method'));
 app.use('/pets', petController);
 
 
-mongoose.connect(makaURI, ()=>{
+mongoose.connect(albertURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 
