@@ -37,14 +37,4 @@ router.get('/:id', (req,res)=>{
     });
 });
 
-
-// router.get('/seed', (req,res)=>{
-//     Pet.create(seed, (err, data)=>{
-//         console.log(data);
-//     })
-// })
-
-
-
-
 module.exports = router;
