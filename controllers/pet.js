@@ -43,10 +43,6 @@ router.get('/search', (req,res)=>{
     });
 });
 
-router.get('/new', (req,res)=>{
-    res.send('test')
-})
-
 
 router.get('/', (req,res)=>{
     Pet.find({}, (err, foundPets)=>{
