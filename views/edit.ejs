@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Edit <%= Pet.name %></h1>
+
+    <form action="/pets/<%= Pet._id %>?_method=PUT" method="POST">
+
+name: <input type="text" name="name">
+type: <input type="text" name="type">
+breed: <input type="text" name="breed">
+age: <input type="text" name="age">
+color: <input type="text" name="color">
+aggressive: <input type="text" name="aggressive">
+img: <input type="text" name="img">
+<input type="submit" value="Edit Animal">
+
+
+</form>
+
+
+
+</body>
+</html>

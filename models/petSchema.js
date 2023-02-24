@@ -13,5 +13,5 @@ const petSchema = new mongoose.Schema({
 petSchema.index({ name: "text", type: "text", breed: "text" });
 
 
-const Pet = mongoose.model('PetRescue', petSchema);
+const Pet = mongoose.model('Pet', petSchema);
 module.exports = Pet;
