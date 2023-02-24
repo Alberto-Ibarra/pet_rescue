@@ -17,7 +17,7 @@ app.use('/pets', petController);
 
 
 mongoose.set('strictQuery', false);
-mongoose.connect(makaURI, ()=>{
+mongoose.connect(albertURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 
