@@ -38,12 +38,13 @@ router.get('/:id', (req,res)=>{
 });
 
 
-
-// router.get('/seed', (req, res) => {
+// router.get('/seed', (req,res)=>{
 //     Pet.create(seed, (err, data)=>{
 //         res.send(data);
 //     })
 // })
+
+
 
 
 module.exports = router;
