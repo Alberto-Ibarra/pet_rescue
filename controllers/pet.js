@@ -22,6 +22,7 @@ router.get('/search', (req,res)=>{
 
 router.get('/', (req,res)=>{
     Pet.find({}, (err, foundPets)=>{
+        console.log(foundPets)
         res.render('index.ejs', {
             pets: foundPets
         });
