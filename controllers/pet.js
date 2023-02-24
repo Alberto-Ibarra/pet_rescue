@@ -30,18 +30,22 @@ router.get('/:id/edit', (req, res) => {
 
 router.get('/search', (req,res)=>{
     const query = req.query.search;
-    console.log(query);
+    console.log(typeof(query));
     Pet.find({$text: {$search: query}}, (err, searchedPets)=>{
         if(err){
             console.log(err);
         }else{
-            console.log(searchedPets);
+            // console.log(searchedPets);
             res.render('search.ejs',{
                 results: searchedPets
             });
         }
     });
 });
+
+router.get('/new', (req,res)=>{
+    res.send('test')
+})
 
 
 router.get('/', (req,res)=>{
@@ -56,9 +60,9 @@ router.get('/', (req,res)=>{
 router.get('/:id', (req,res)=>{
     Pet.findById(req.params.id, (err, foundPet)=>{
         console.log(foundPet);
-        // res.render('show.ejs', {
-        //     pet: foundPet
-        // });
+        res.render('show.ejs', {
+            pet: foundPet
+        });
     });
 });
 
