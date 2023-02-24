@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <h1>Edit Page</h1>
+    <h1>Edit <%= Pet.name %></h1>
 
-    <form action="/pets/:id?_method=PUT" method="POST">
+    <form action="/pets/<%= Pet._id %>?_method=PUT" method="POST">
 
 name: <input type="text" name="name">
 type: <input type="text" name="type">
@@ -19,10 +19,10 @@ age: <input type="text" name="age">
 color: <input type="text" name="color">
 aggressive: <input type="text" name="aggressive">
 img: <input type="text" name="img">
+<input type="submit" value="Edit Animal">
 
 
-
-    </form>
+</form>
 
 
 

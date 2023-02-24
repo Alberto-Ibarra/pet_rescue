@@ -38,6 +38,26 @@ router.get('/:id', (req,res)=>{
     });
 });
 
+// NEW PAGE
+router.get('/pets/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+// POST
+router.post('/pets', (req, res) => {
+    Pet.create(req.body, (err, newPet) => {
+        res.send(newPet)
+    })
+})
+
+// EDIT
+router.get('pets/:id/edit', (req, res) => {
+    Pet.findById(req.params.id, (err, foundPet) => {
+        res.render('edit.ejs', {
+            Pet: foundPet
+        })
+    })
+})
 
 // router.get('/seed', (req,res)=>{
 //     Pet.create(seed, (err, data)=>{
