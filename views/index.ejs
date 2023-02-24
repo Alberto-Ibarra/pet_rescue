@@ -11,6 +11,7 @@
         <input type="text" name="search" placeholder="Enter a search term">
         <button type="submit">Search</button>
     </form>
+    <a href="/pets/new">Add Pet</a>
 
     <% for(let i = 0; i < pets.length; i++){ %>
         <a href="/pets/<%=pets[i]._id%>"><h1><%=pets[i].name%></h1></a>
