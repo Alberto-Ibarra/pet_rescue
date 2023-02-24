@@ -1,10 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const Pet = require('../models/petSchema');
+const Pet = require('../models/petSchema.js');
+const seed = require('../models/seed.js');
 
 router.get('/', (req,res)=>{
-    res.render('index.ejs')
+    Pet.find({}, (err, foundPets)=>{
+        res.render('index.ejs', {
+            pets: foundPets
+        });
+    });
 });
+
+router.get('/:id', (req,res)=>{
+    Pet.findById(req.params.id, (err, foundPet)=>{
+        res.render('show.ejs', {
+            pet: foundPet
+        });
+    });
+});
+
+// router.get('/seed', (req,res)=>{
+//     Pet.create(seed, (err, data)=>{
+//         console.log(data);
+//     })
+// })
+
+
 
 
 

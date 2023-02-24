@@ -1,1 +1,21 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <% for(let i = 0; i < pets.length; i++){ %>
+        <a href="/pets/<%=pets[i]._id%>"><h1><%=pets[i].name%></h1></a>
+        <img src="<%=pets[i].img%>">
+        <p><%=pets[i].type%></p>
+        <p><%=pets[i].breed%></p>
+        <p><%=pets[i].age%></p>
+        <p><%=pets[i].color%></p>
+        <p><%=pets[i].aggressive%></p>
+    <%}%>
+</body>
+</html>
