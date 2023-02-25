@@ -5,22 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="/pets/search" method="GET">
-        <input type="text" name="search" placeholder="Enter a search term">
-        <button type="submit">Search</button>
-    </form>
-    <a href="/pets/new">Add Pet</a>
+    <div class="nav">
+        <nav class="nav1">
+            <h1 class="title">PetRescue</h1>
+        </nav>
+        <nav class="nav2">
+            <div class="nav2content">
+                <form action="/pets/search" method="GET">
+                    <input type="text" name="search" placeholder="Enter a search term">
+                    <button type="submit">Search</button>
+                </form>
+                <a href="/pets/new">Add Pet</a>
+            </div>
+        </nav>
+    </div>
+    <img src="https://newevolutiondesigns.com/images/freebies/4k-dog-wallpaper-1.jpg" class="homeImg">
 
     <% for(let i = 0; i < pets.length; i++){ %>
-        <a href="/pets/<%=pets[i]._id%>"><h1><%=pets[i].name%></h1></a>
-        <img src="<%=pets[i].img%>">
-        <p><%=pets[i].type%></p>
-        <p><%=pets[i].breed%></p>
-        <p><%=pets[i].age%></p>
-        <p><%=pets[i].color%></p>
-        <p><%=pets[i].aggressive%></p>
+    <div class="card">
+        <a href="/pets/<%= pets[i]._id %>"><img src="<%=pets[i].img%>" style="width: 100%;border-radius: 5px 5px 0 0;"></a>
+        <div class="cardContainer">
+            <h2><%=pets[i].name%></h2>
+            <h3><%=pets[i].type%></h3>
+        </div>
+    </div>
     <%}%>
 </body>
 </html>

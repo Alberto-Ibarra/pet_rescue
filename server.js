@@ -14,25 +14,25 @@ const makaURI = process.env.MONGODB1;
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use('/pets', petController);
 
 
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(makaURI, ()=>{
+mongoose.connect(albertURI, ()=>{
     console.log('connection to mongoDB made...');
 });
-app.use('/pets', petController);
 
-// app.get('/seed', (req, res) => {
-//     console.log(Pet)
-//     Pet.create(seedData, (err, pets) => {
-//         if(err) {
-//             console.log(err)
-//         }
-//         res.json(pets)
-//     })
-// })
+app.get('/seed', (req, res) => {
+    console.log(Pet)
+    Pet.create(seedData, (err, pets) => {
+        if(err) {
+            console.log(err)
+        }
+        res.json(pets)
+    })
+})
 
 app.listen(PORT, () => {
     console.log('Listening....');
