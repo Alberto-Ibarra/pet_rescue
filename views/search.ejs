@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <%-include('./partials/nav.ejs')%>
+    <h1 style="text-align: center;">Search Results</h1>
 
-
-<h1>Search Results</h1>
-
-    <ul>
-    <% for(let i = 0; i< results.length; i++) { %>
-        <li><%= results[i].name %></li>
-    <% }%>
-    </ul>
+    <div class="grid">
+        <% for(let i = 0; i < results.length; i++){ %>
+        <div class="card">
+            <a href="/pets/<%= results[i]._id %>"><img src="<%=results[i].img%>" style="width: 100%;border-radius: 5px 5px 0 0;height: 250px;"></a>
+            <div class="cardContainer">
+                <h2><%=results[i].name%></h2>
+                <% if(results[i].type == 'dog'){ %>
+                    <i class="fa-solid fa-dog fa-2xl petIcon"></i>
+                <% } else if(results[i].type == 'cat') {%>
+                    <i class="fa-solid fa-cat fa-2xl petIcon"></i>
+                <% }else if(results[i].type == 'bird') {%>
+                    <i class="fa-solid fa-dove fa-2xl petIcon"></i>
+                <% }else if(results[i].type == 'bunny') {%>
+                    <i class="fa-solid fa-carrot petIcon fa-2xl"></i>
+                <% }else{ %>
+                    <%=results[i].type %>
+                <% } %>
+            </div>
+        </div>
+        <%}%>
+    </div>
 
 
 </body>

@@ -16,6 +16,11 @@
     height: 50px;
 }
 
+.nav1 a {
+    text-decoration: none;
+    color: black;
+}
+
 .nav2{
     overflow: hidden;
     background-color: purple;
@@ -63,13 +68,13 @@
     margin-top: 25px;
 }
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .cardContainer{
