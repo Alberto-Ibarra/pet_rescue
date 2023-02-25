@@ -5,6 +5,17 @@ const seed = require('../models/seed.js');
 
 
 
+
+// INDEX PAGE
+router.get('/', (req,res)=>{
+    Pet.find({}, (err, foundPets)=>{
+        console.log(foundPets)
+        res.render('index.ejs', {
+            pets: foundPets
+        });
+    });
+});
+
 // NEW PAGE
 router.get('/new', (req, res) => {
     res.render('new.ejs')
@@ -12,7 +23,13 @@ router.get('/new', (req, res) => {
 
 // POST
 router.post('/', (req, res) => {
+    if(req.body.aggressive === 'on') {
+        req.body.aggressive = true
+    } else {
+        req.body.aggressive = false
+    }
     Pet.create(req.body, (err, newPet) => {
+        console.log(newPet)
         res.redirect('/pets')
     })
 })
@@ -53,14 +70,7 @@ router.get('/search', (req,res)=>{
 });
 
 
-router.get('/', (req,res)=>{
-    Pet.find({}, (err, foundPets)=>{
-        console.log(foundPets)
-        res.render('index.ejs', {
-            pets: foundPets
-        });
-    });
-});
+
 
 router.get('/:id', (req,res)=>{
     Pet.findById(req.params.id, (err, foundPet)=>{
