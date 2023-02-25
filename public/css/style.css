@@ -36,9 +36,23 @@
     color: white;
 }
 
+.search{
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.searchbtn{
+    padding: 5px;
+    background-color: white;
+    border: none;
+    height: 27px;
+}
+
 .homeImg{
     max-width: 100%;
 }
+
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -47,6 +61,11 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .card:hover {
@@ -61,4 +80,8 @@
 
 .cardContainer h2, .cardContainer h3{
     margin-top: 17px;
+}
+
+.petIcon{
+    margin-top: 25px;
 }

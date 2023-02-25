@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/03104b444a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav">
@@ -17,24 +18,36 @@
         </nav>
         <nav class="nav2">
             <div class="nav2content">
-                <form action="/pets/search" method="GET">
-                    <input type="text" name="search" placeholder="Enter a search term">
-                    <button type="submit">Search</button>
+                <a href="/pets/new" style="font-size: x-large;font-style: bold;">Add Pet</a>
+                <form action="/pets/search" method="GET" class="form">
+                    <input type="text" name="search" placeholder="Search..." class="search">
+                    <button type="submit" class="searchbtn"><i class="fa-solid fa-bone fa-2xl"></i></button>
                 </form>
-                <a href="/pets/new">Add Pet</a>
             </div>
         </nav>
     </div>
     <img src="https://newevolutiondesigns.com/images/freebies/4k-dog-wallpaper-1.jpg" class="homeImg">
-
+    <h1 style="text-align: center;">Adopt your next best friend!</h1>
+    <div class="grid">
     <% for(let i = 0; i < pets.length; i++){ %>
-    <div class="card">
-        <a href="/pets/<%= pets[i]._id %>"><img src="<%=pets[i].img%>" style="width: 100%;border-radius: 5px 5px 0 0;"></a>
-        <div class="cardContainer">
-            <h2><%=pets[i].name%></h2>
-            <h3><%=pets[i].type%></h3>
+        <div class="card">
+            <a href="/pets/<%= pets[i]._id %>"><img src="<%=pets[i].img%>" style="width: 100%;border-radius: 5px 5px 0 0;height: 250px;"></a>
+            <div class="cardContainer">
+                <h2><%=pets[i].name%></h2>
+                <% if(pets[i].type == 'dog'){ %>
+                    <i class="fa-solid fa-dog fa-2xl petIcon"></i>
+                <% } else if(pets[i].type == 'cat') {%>
+                    <i class="fa-solid fa-cat fa-2xl petIcon"></i>
+                <% }else if(pets[i].type == 'bird') {%>
+                    <i class="fa-solid fa-dove fa-2xl petIcon"></i>
+                <% }else if(pets[i].type == 'rabbit') {%>
+                    <i class="fa-solid fa-carrot petIcon"></i>
+                <% }else{ %>
+                    <%=pets[i].type %>
+                <% } %>
+            </div>
         </div>
+        <%}%>
     </div>
-    <%}%>
 </body>
 </html>
