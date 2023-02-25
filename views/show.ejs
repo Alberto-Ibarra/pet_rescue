@@ -8,6 +8,9 @@
 </head>
 <body>
     <a href="/pets">Home</a>
+    <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
+<input type="submit" value="DELETE">
+    </form>
     <a href="/pets/<%=pet._id%>/edit">Edit</a>
     <h1><%=pet.name%></h1>
     <img src="<%=pet.img%>">

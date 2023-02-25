@@ -13,13 +13,11 @@ router.get('/new', (req, res) => {
 // POST
 router.post('/', (req, res) => {
     Pet.create(req.body, (err, newPet) => {
-        res.send(newPet)
+        res.redirect('/pets')
     })
 })
-
-// // EDIT
+// EDIT
 router.get('/:id/edit', (req, res) => {
-    console.log(Pet)
     Pet.findById(req.params.id, (err, foundPet) => {
         res.render('edit.ejs', {
             Pet: foundPet
@@ -27,6 +25,17 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    if(req.body.aggressive === 'on') {
+        req.body.aggressive = true
+    } else {
+        req.body.aggressive = false
+    }
+    Pet.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatePet) => {
+        console.log(updatePet)
+        res.redirect('/pets')
+    })
+})
 
 router.get('/search', (req,res)=>{
     const query = req.query.search;
@@ -63,6 +72,16 @@ router.get('/:id', (req,res)=>{
 });
 
 
+// DELETE
+router.delete('/:id', (req, res) => {
+    Pet.findByIdAndRemove(req.params.id, (err, deletePet) => {
+        if(err) {
+            console.log(err)
+        } else {
+            res.redirect('/pets')
+        }
+    })
+})
 
 // router.get('/seed', (req,res)=>{
 //     Pet.create(seed, (err, data)=>{

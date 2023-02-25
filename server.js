@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(albertURI, ()=>{
+mongoose.connect(makaURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 app.use('/pets', petController);
