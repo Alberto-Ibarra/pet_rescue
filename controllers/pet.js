@@ -16,7 +16,26 @@ router.post('/', (req, res) => {
         res.redirect('/pets')
     })
 })
+// EDIT
+router.get('/:id/edit', (req, res) => {
+    Pet.findById(req.params.id, (err, foundPet) => {
+        res.render('edit.ejs', {
+            Pet: foundPet
+        })
+    })
+})
 
+router.put('/:id', (req, res) => {
+    if(req.body.aggressive === 'on') {
+        req.body.aggressive = true
+    } else {
+        req.body.aggressive = false
+    }
+    Pet.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatePet) => {
+        console.log(updatePet)
+        res.redirect('/pets')
+    })
+})
 
 router.get('/search', (req,res)=>{
     const query = req.query.search;
@@ -51,25 +70,7 @@ router.get('/:id', (req,res)=>{
         });
     });
 });
-// EDIT
-router.get('/:id/edit', (req, res) => {
-    Pet.findById(req.params.id, (err, foundPet) => {
-        res.render('edit.ejs', {
-            Pet: foundPet
-        })
-    })
-})
 
-router.put('/:id', (req, res) => {
-    if(req.body.aggressive === 'on') {
-        req.body.aggressive = true
-    } else {
-        req.body.aggressive = false
-    }
-    Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatePet) => {
-        res.send(updatePet)
-    })
-})
 
 // DELETE
 router.delete('/:id', (req, res) => {
