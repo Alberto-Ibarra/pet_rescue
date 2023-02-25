@@ -10,7 +10,7 @@ const petSchema = new mongoose.Schema({
     img: String
 }, {timestamps:true});
 
-petSchema.index({ name: "text", type: "text", breed: "text" });
+petSchema.index({ name: "text", type: "text", breed: "text", color: "text" });
 
 
 const Pet = mongoose.model('Pet', petSchema);
