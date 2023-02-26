@@ -1,0 +1,96 @@
+.nav-form{
+    width: 100%;
+}
+
+.nav1-form{
+    overflow: hidden;
+    height: 50px;
+}
+
+.nav2-form{
+    overflow: hidden;
+    background-color: purple;
+    height: 50px;
+}
+
+.nav2content-form{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav2content-form form, .nav2content-form a {
+    padding-top: 15px;
+}
+
+.nav2content-form a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/* //////////////////// */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); *
+
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #eee8ed;
+}
+
+.inputBox {
+    margin-top: 10px;
+    position: relative;
+    width: 250px;
+}
+
+.inputBox input {
+    
+    width: 100%;
+    padding: 10px;
+    border: 3px solid purple;
+    /* background: #1d2b3a; */
+    border-radius: 5px;
+    outline: none;
+    color: rgb(9, 9, 9);
+    font-size: 1em;
+}
+.createBTN {
+    margin-top: 10px;
+    position: relative;
+    width: 250px;
+}
+.createBTN input {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid purple;
+    background: purple;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(252, 252, 252);
+    font-size: 1em;
+}
+
+
+.aggressive {
+    width: 100%;
+    padding: 10px;
+    
+    border-radius: 5px;
+    outline: none;
+    color: gray;
+    font-size: 1em;
+}
