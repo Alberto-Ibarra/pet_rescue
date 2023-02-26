@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/forms.css">
     <title>Document</title>
 </head>
 <body>
+<div class="nav-form">
+    <nav class="nav1-form">
+        <h1 class="title-form">PetRescue</h1>
+    </nav>
+    <nav class="nav2-form">
+        <div class="nav2content-form">
+            <a href="/pets" style="font-size: x-large;font-style: bold;">Home</a>
+        </div>
+    </nav>
+</div>
+<h1>Create New Animal</h1>
 
-    <h1>Create New Animal</h1>
-<button><a href="/pets">Home</a></button>
-
+<div class="form">
     <form action="/pets" method="POST">
 
-name: <input type="text" name="name">
-type: <input type="text" name="type">
-breed: <input type="text" name="breed">
-age: <input type="number" name="age">
-color: <input type="text" name="color">
-img: <input type="text" name="img">
-aggressive: <input type="checkbox" name="aggressive">
-<input type="submit" value="Create Animal">
+        <div class="inputBox">
+            <input type="text" name="name" placeholder="NAME">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="type" placeholder="TYPE">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="breed" placeholder="BREED">
+        </div>
+        <div class="inputBox">
+            <input type="number" name="age" placeholder="AGE">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="color" placeholder="COLOR">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="img" placeholder="IMG LINK">
+        </div>
+        <div class="aggressive">
+            AGGRESSIVE<input type="checkbox" name="aggressive">
+        </div>
+        <div class="createBTN">
+            <input type="submit" value="Create Animal">
+        </div>
 
 
-</form>
 
+    </form>
+</div>
 
 
 </body>
