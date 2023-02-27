@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <a href="/pets">Home</a>
-    <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-<input type="submit" value="DELETE">
+    <%-include('./partials/nav.ejs')%>
+
+    <div class="showOptions">
+        <a href="/pets/<%=pet._id%>/edit">Edit</a>
+        <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
     </form>
-    <a href="/pets/<%=pet._id%>/edit">Edit</a>
+</div>
+    <% let dateFormat = new Date(pet.createdAt) %>
+    <p>Date posted: <%= dateFormat.getDay()+ "/" + (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear()%>  </p>
     <h1><%=pet.name%></h1>
     <img src="<%=pet.img%>">
     <p><%=pet.type%></p>
