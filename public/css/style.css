@@ -91,105 +91,46 @@
     margin-top: 25px;
 }
 
-
-
-/* FORMS PAGES */
-
-.nav-form{
-width: 100%;
-}
-
-
-.nav1-form{
-    overflow: hidden;
-    height: 50px;
-}
-
-.nav2-form{
-    overflow: hidden;
-    background-color: purple;
-    height: 50px;
-}
-
-.nav2content-form{
+.showOptions{
     display: flex;
     justify-content: space-around;
+    margin-top: 15px;
 }
 
-.nav2content-form form, .nav2content-form a {
-    padding-top: 15px;
+.showImg{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 400px;
+    width: 80%;
 }
 
-.nav2content-form a{
-    text-decoration: none;
-    color: white;
-}
-
-
-
-/* //////////////////// */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); *
-
-
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} */
-
-
-.form {
+.showContent{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-    gap: 30px;
-    background: #f9f8f9;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.inputBox {
-    margin-top: 10px;
-    position: relative;
-    width: 250px;
+.content{
+    margin-top: 40px;
+    font-size: 30px;
 }
 
-.inputBox input {
-    
-    width: 100%;
-    padding: 10px;
-    border: 3px solid purple;
-    border-radius: 5px;
-    outline: none;
-    color: rgb(9, 9, 9);
-    font-size: 1em;
+.button {
+    background-color: #4CAF50; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
-.createBTN {
-    margin-top: 10px;
-    position: relative;
-    width: 250px;
-}
-.createBTN input {
-    width: 100%;
-    padding: 10px;
-    border: 3px solid purple;
-    background: purple;
-    border-radius: 5px;
-    outline: none;
-    color: rgb(252, 252, 252);
-    font-size: 1em;
-}
-
-
-.aggressive {
-    width: 100%;
-    padding: 10px;
-    
-    border-radius: 5px;
-    outline: none;
-    color: gray;
-    font-size: 1em;
-}
-
