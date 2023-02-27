@@ -139,6 +139,7 @@ width: 100%;
     font-family: 'Poppins', sans-serif;
 } */
 
+
 .form {
     display: flex;
     justify-content: center;
@@ -146,7 +147,7 @@ width: 100%;
     min-height: 100vh;
     flex-direction: column;
     gap: 30px;
-    background: #eee8ed;
+    background: #f9f8f9;
 }
 
 .inputBox {
