@@ -23,22 +23,22 @@
     <form action="/pets/<%= Pet._id %>?_method=PUT" method="POST">
 
         <div class="inputBox">
-            <input type="text" name="name" placeholder="NAME">
+            <input type="text" name="name" placeholder="NAME" value="<%= Pet.name %>">
         </div>
         <div class="inputBox">
-            <input type="text" name="type" placeholder="TYPE">
+            <input type="text" name="type" placeholder="TYPE" value="<%= Pet.type %>">
         </div>
         <div class="inputBox">
-            <input type="text" name="breed" placeholder="BREED">
+            <input type="text" name="breed" placeholder="BREED" value="<%= Pet.breed %>">
         </div>
         <div class="inputBox">
-            <input type="number" name="age" placeholder="AGE">
+            <input type="number" name="age" placeholder="AGE" value="<%= Pet.age %>">
         </div>
         <div class="inputBox">
-            <input type="text" name="color" placeholder="COLOR">
+            <input type="text" name="color" placeholder="COLOR" value="<%= Pet.color %>">
         </div>
         <div class="inputBox">
-            <input type="text" name="img" placeholder="IMG LINK">
+            <input type="text" name="img" placeholder="IMG LINK" value="<%= Pet.img %>">
         </div>
         <div class="aggressive">
             AGGRESSIVE <input type="checkbox" name="aggressive">
