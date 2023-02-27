@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <%-include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="nav-form">
-    <nav class="nav1-form">
-        <h1 class="title-form">PetRescue</h1>
-    </nav>
-    <nav class="nav2-form">
-        <div class="nav2content-form">
-            <a href="/pets" style="font-size: x-large;font-style: bold;">Home</a>
-        </div>
-    </nav>
-</div>
-<h1>Create Animal</h1>
+    <div class="nav-form">
+        <nav class="nav1">
+            <a href="/pets"><h1 class="title">PetRescue</h1></a>
+        </nav>
+        <nav class="nav2-form">
+            <div class="nav2content-form">
+                
+            </div>
+        </nav>
+    </div>
+
 
 <div class="form">
+    
+<h1>Create Animal</h1>
+
     <form action="/pets" method="POST">
 
         <div class="inputBox">
@@ -38,7 +42,7 @@
             <input type="text" name="img" placeholder="IMG LINK">
         </div>
         <div class="aggressive">
-            AGGRESSIVE<input type="checkbox" name="aggressive">
+            AGGRESSIVE <input type="checkbox" name="aggressive">
         </div>
         <div class="createBTN">
             <input type="submit" value="Create Animal">

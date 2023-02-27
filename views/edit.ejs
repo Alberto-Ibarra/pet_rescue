@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%-include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+    <div class="nav-form">
+        <nav class="nav1">
+            <a href="/pets"><h1 class="title">PetRescue</h1></a>
+        </nav>
+        <nav class="nav2-form">
+            
+        </nav>
+    </div>
+
+<div class="form">
 
     <h1>Edit <%= Pet.name %></h1>
 
     <form action="/pets/<%= Pet._id %>?_method=PUT" method="POST">
 
-name: <input type="text" name="name">
-type: <input type="text" name="type">
-breed: <input type="text" name="breed">
-age: <input type="number" name="age">
-color: <input type="text" name="color">
-img: <input type="text" name="img">
-aggressive: <input type="checkbox" name="aggressive">
-<input type="submit" value="Edit Animal">
+        <div class="inputBox">
+            <input type="text" name="name" placeholder="NAME">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="type" placeholder="TYPE">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="breed" placeholder="BREED">
+        </div>
+        <div class="inputBox">
+            <input type="number" name="age" placeholder="AGE">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="color" placeholder="COLOR">
+        </div>
+        <div class="inputBox">
+            <input type="text" name="img" placeholder="IMG LINK">
+        </div>
+        <div class="aggressive">
+            AGGRESSIVE <input type="checkbox" name="aggressive">
+        </div>
+        <div class="createBTN">
+            <input type="submit" value="Save Changes">
+        </div>
 
+    </form>
 
-</form>
-
-
+</div>
 
 </body>
 </html>
