@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const crypto = require('crypto');
+const secret = crypto.randomBytes(64).toString('hex');
 
 const PORT = process.env.PORT || 3000
 
@@ -19,7 +21,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(
     session({
-        secret: 'secret',
+        secret,
         resave: false,
         saveUninitialized: false
     })
