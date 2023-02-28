@@ -19,7 +19,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(
     session({
-        secret: process.env.SECRET,
+        secret: 'secret',
         resave: false,
         saveUninitialized: false
     })
@@ -32,7 +32,7 @@ app.use('/sessions', sessionController);
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(makaURI, ()=>{
+mongoose.connect(albertURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 
