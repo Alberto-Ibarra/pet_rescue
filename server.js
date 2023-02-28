@@ -32,7 +32,7 @@ app.use('/sessions', sessionController);
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(albertURI, ()=>{
+mongoose.connect(makaURI, ()=>{
     console.log('connection to mongoDB made...');
 });
 
