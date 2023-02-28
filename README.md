@@ -6,11 +6,11 @@
 
 ![7D16F126-A353-45CA-BC01-FF0FF7CE107A](https://user-images.githubusercontent.com/93948054/221967559-b8037e43-3ff4-4562-ae5e-c2983e9b652e.jpeg)
 
-Built with:
+## Built with
 
 Node.js  Express   EJS   MongoDB
 
-# User Stories:
+## User Stories:
 As a user I should be able to: <br>
 - View all listed pets<br>
 - View one pet with details regarding the pets<br>
