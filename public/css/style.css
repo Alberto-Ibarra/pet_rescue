@@ -54,6 +54,23 @@
     height: 27px;
 }
 
+.right{
+    list-style-type: none;
+}
+
+.logout{
+    width: 70px;
+    background-color: firebrick;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
 .homeImg{
     max-width: 100%;
 }

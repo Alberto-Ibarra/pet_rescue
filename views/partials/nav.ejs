@@ -12,10 +12,10 @@
 
             <ul class="right">
                 <% if (currentUser) { %>
-                <li>Welcome <%= currentUser.email %></li>
-                <li>
+                <li style="color: white;">Welcome <%= currentUser.email %></li>
+                <li style="margin-left: 50px;">
                     <form action="/sessions?_method=DELETE" method="POST">
-                        <input type="submit" value="Log Out" class="btn-small red" />
+                        <input type="submit" value="Log Out" class="logout"/>
                     </form>
                 </li>
                 <% } else { %>
