@@ -18,7 +18,7 @@ As a user I want to edit or delete listed pets<br>
 As a user I want to search for specific pets<br>
 As a user I want to register an account<br>
 
-A full CRUD application built with Node.js, Express, EJS, and MongoDB. No CSS frameworks were used. grid-template-colums were used to handle the flow of the application. In this application you can create, read, update, delete, and search for pets. A login and registration was also created and users login can only add, edit or delete pets. Application is hosted with Render.
+A full CRUD application built with Node.js, Express, EJS, and MongoDB. No CSS frameworks were used. grid-template-colums were used to handle the flow of the application. In this application you can create, read, update, delete, and search for pets. A login and registration was also created and users logged in can only add, edit or delete pets. Application is hosted with Render.
 
 
 
