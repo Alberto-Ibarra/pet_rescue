@@ -3,7 +3,13 @@ const router = express.Router();
 const Pet = require('../models/petSchema.js');
 const seed = require('../models/seed.js');
 
-
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+        return next()
+    } else {
+        res.redirect('/sessions/new')
+    }
+}
 
 
 // INDEX PAGE
@@ -11,14 +17,17 @@ router.get('/', (req,res)=>{
     Pet.find({}, (err, foundPets)=>{
         console.log(foundPets)
         res.render('index.ejs', {
-            pets: foundPets
+            pets: foundPets,
+            currentUser: req.session.currentUser 
         });
     });
 });
 
 // NEW PAGE
-router.get('/new', (req, res) => {
-    res.render('new.ejs')
+router.get('/new', isAuthenticated, (req, res) => {
+    res.render('new.ejs',{
+        currentUser: req.session.currentUser 
+    })
 })
 
 // POST
@@ -34,10 +43,11 @@ router.post('/', (req, res) => {
     })
 })
 // EDIT
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', isAuthenticated, (req, res) => {
     Pet.findById(req.params.id, (err, foundPet) => {
         res.render('edit.ejs', {
-            Pet: foundPet
+            Pet: foundPet,
+            currentUser: req.session.currentUser 
         })
     })
 })
@@ -63,7 +73,8 @@ router.get('/search', (req,res)=>{
         }else{
             // console.log(searchedPets);
             res.render('search.ejs',{
-                results: searchedPets
+                results: searchedPets,
+                currentUser: req.session.currentUser 
             });
         }
     });
@@ -76,14 +87,15 @@ router.get('/:id', (req,res)=>{
     Pet.findById(req.params.id, (err, foundPet)=>{
         console.log(foundPet);
         res.render('show.ejs', {
-            pet: foundPet
+            pet: foundPet,
+            currentUser: req.session.currentUser 
         });
     });
 });
 
 
 // DELETE
-router.delete('/:id', (req, res) => {
+router.delete('/:id', isAuthenticated, (req, res) => {
     Pet.findByIdAndRemove(req.params.id, (err, deletePet) => {
         if(err) {
             console.log(err)

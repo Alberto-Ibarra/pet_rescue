@@ -9,6 +9,20 @@
                 <input type="text" name="search" placeholder="Search... (breed, type)" class="search">
                 <button type="submit" class="searchbtn"><i class="fa-solid fa-bone fa-2xl"></i></button>
             </form>
+
+            <ul class="right">
+                <% if (currentUser) { %>
+                <li>Welcome <%= currentUser.email %></li>
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <input type="submit" value="Log Out" class="btn-small red" />
+                    </form>
+                </li>
+                <% } else { %>
+                <li><a href="/users/new">Sign Up</a></li>
+                <li><a href="/sessions/new">Log In</a></li>
+                <% } %>
+            </ul>
         </div>
     </nav>
 </div>
