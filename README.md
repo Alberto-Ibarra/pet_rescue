@@ -10,7 +10,7 @@ Built with:
 
 Node.js  Express   EJS   MongoDB
 
-User Stories: <br>
+# User Stories:
 As a user I should be able to: <br>
 - View all listed pets<br>
 - View one pet with details regarding the pets<br>
